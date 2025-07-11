@@ -38,6 +38,21 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
+    /* QBR Media & Instacart Brand Colors */
+    --instacart-orange: 25 100% 60%;
+    --instacart-green: 142 69% 58%;
+    --qbr-primary: 340 82% 52%;
+    --qbr-secondary: 291 64% 42%;
+    --qbr-accent: 45 93% 58%;
+    
+    /* Brand Gradients */
+    --gradient-qbr: linear-gradient(135deg, hsl(var(--qbr-primary)), hsl(var(--qbr-secondary)));
+    --gradient-instacart: linear-gradient(135deg, hsl(var(--instacart-orange)), hsl(var(--instacart-green)));
+    
+    /* Enhanced Shadows */
+    --shadow-brand: 0 10px 30px -10px hsl(var(--qbr-primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--instacart-orange) / 0.2);
+
     --sidebar-background: 0 0% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -91,21 +106,6 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* QBR Media & Instacart Brand Colors */
-    --instacart-orange: 25 100% 60%;
-    --instacart-green: 142 69% 58%;
-    --qbr-primary: 340 82% 52%;
-    --qbr-secondary: 291 64% 42%;
-    --qbr-accent: 45 93% 58%;
-    
-    /* Brand Gradients */
-    --gradient-qbr: linear-gradient(135deg, hsl(var(--qbr-primary)), hsl(var(--qbr-secondary)));
-    --gradient-instacart: linear-gradient(135deg, hsl(var(--instacart-orange)), hsl(var(--instacart-green)));
-    
-    /* Enhanced Shadows */
-    --shadow-brand: 0 10px 30px -10px hsl(var(--qbr-primary) / 0.3);
-    --shadow-glow: 0 0 40px hsl(var(--instacart-orange) / 0.2);
   }
 }
 

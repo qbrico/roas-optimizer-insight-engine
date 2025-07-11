@@ -154,10 +154,11 @@ const Index = () => {
               <Button 
                 asChild 
                 size="lg" 
-                className="text-lg px-8 py-6 font-semibold border-0"
+                className="text-lg px-8 py-6 font-semibold border-2"
                 style={{ 
                   background: 'hsl(var(--instacart-green))',
-                  color: 'hsl(var(--background))'
+                  color: 'hsl(var(--foreground))',
+                  borderColor: 'hsl(var(--foreground))'
                 }}
               >
                 <a 
