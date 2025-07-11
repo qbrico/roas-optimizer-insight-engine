@@ -18,16 +18,6 @@ export const ParametersPanel = ({ parameters, onParametersChange }: ParametersPa
     });
   };
 
-  const platforms = [
-    "Google Ads",
-    "Facebook Ads", 
-    "Amazon Advertising",
-    "Instacart",
-    "TikTok Ads",
-    "Pinterest Ads",
-    "Snapchat Ads",
-    "Other"
-  ];
 
   const timeHorizonOptions = [
     { value: 7, label: "7 days" },
@@ -128,27 +118,6 @@ export const ParametersPanel = ({ parameters, onParametersChange }: ParametersPa
             </Select>
           </div>
 
-          {/* Platform */}
-          <div className="space-y-3">
-            <Label className="text-sm font-medium">
-              Platform
-            </Label>
-            <Select 
-              value={parameters.platform} 
-              onValueChange={(value) => updateParameter('platform', value)}
-            >
-              <SelectTrigger>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                {platforms.map((platform) => (
-                  <SelectItem key={platform} value={platform}>
-                    {platform}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
         </div>
       </CardContent>
     </Card>
