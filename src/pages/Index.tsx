@@ -174,9 +174,7 @@ const Index = () => {
 
               <p className="text-sm" style={{
               color: 'hsl(var(--foreground) / 0.7)'
-            }}>
-                Join 100+ brands already scaling with QBR Media
-              </p>
+            }}>Join 20+ brands already scaling with QBR Media</p>
             </div>
           </CardContent>
         </Card>
