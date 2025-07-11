@@ -3,6 +3,7 @@ import { MetricsDashboard } from "@/components/roas/MetricsDashboard";
 import { ParametersPanel } from "@/components/roas/ParametersPanel";
 import { ROASSensitivityTable } from "@/components/roas/ROASSensitivityTable";
 import { TimeHorizonTable } from "@/components/roas/TimeHorizonTable";
+import { BreakevenEvolutionTable } from "@/components/roas/BreakevenEvolutionTable";
 import { BreakevenChart } from "@/components/roas/BreakevenChart";
 import { ScenarioComparison } from "@/components/roas/ScenarioComparison";
 import { CLVCalculator } from "@/components/roas/CLVCalculator";
@@ -43,8 +44,22 @@ const Index = () => {
     return parameters.currentROAS * (1 + (numRepeats * repeatRate / 100));
   };
 
+  // LTV-adjusted breakeven ROAS calculation
+  const getLTVAdjustedBreakevenROAS = (numRepeats: number, repeatRate: number) => {
+    const ltvMultiplier = 1 + (numRepeats * repeatRate / 100);
+    return breakevenROAS / ltvMultiplier;
+  };
+
   const getROASStatus = (effectiveROAS: number) => {
     const diff = effectiveROAS - breakevenROAS;
+    if (Math.abs(diff) <= 0.05) return "breakeven";
+    return diff > 0 ? "profitable" : "unprofitable";
+  };
+
+  // Enhanced status that considers LTV-adjusted breakeven
+  const getLTVAwareROASStatus = (effectiveROAS: number, numRepeats: number, repeatRate: number) => {
+    const ltvAdjustedBreakeven = getLTVAdjustedBreakevenROAS(numRepeats, repeatRate);
+    const diff = effectiveROAS - ltvAdjustedBreakeven;
     if (Math.abs(diff) <= 0.05) return "breakeven";
     return diff > 0 ? "profitable" : "unprofitable";
   };
@@ -83,6 +98,8 @@ const Index = () => {
               breakevenROAS={breakevenROAS}
               getEffectiveROAS={getEffectiveROAS}
               getROASStatus={getROASStatus}
+              getLTVAdjustedBreakevenROAS={getLTVAdjustedBreakevenROAS}
+              getLTVAwareROASStatus={getLTVAwareROASStatus}
               selectedScenario={selectedScenario}
               onScenarioSelect={setSelectedScenario}
             />
@@ -95,9 +112,17 @@ const Index = () => {
               breakevenROAS={breakevenROAS}
               timeAdjustment={timeAdjustment}
               getROASStatus={getROASStatus}
+              getLTVAdjustedBreakevenROAS={getLTVAdjustedBreakevenROAS}
             />
           </div>
         </div>
+
+        {/* Breakeven ROAS Evolution Analysis */}
+        <BreakevenEvolutionTable
+          parameters={parameters}
+          breakevenROAS={breakevenROAS}
+          getLTVAdjustedBreakevenROAS={getLTVAdjustedBreakevenROAS}
+        />
 
         {/* Breakeven Visualization */}
         <BreakevenChart

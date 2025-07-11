@@ -8,13 +8,15 @@ interface TimeHorizonTableProps {
   breakevenROAS: number;
   timeAdjustment: Record<number, number>;
   getROASStatus: (effectiveROAS: number) => string;
+  getLTVAdjustedBreakevenROAS: (numRepeats: number, repeatRate: number) => number;
 }
 
 export const TimeHorizonTable = ({
   parameters,
   breakevenROAS,
   timeAdjustment,
-  getROASStatus
+  getROASStatus,
+  getLTVAdjustedBreakevenROAS
 }: TimeHorizonTableProps) => {
   const timeHorizons = [
     { days: 7, label: "7 days", baseRepeatRate: 10.8 },
@@ -35,13 +37,19 @@ export const TimeHorizonTable = ({
     const status = getROASStatus(effectiveROAS);
     const roasDiff = effectiveROAS - breakevenROAS;
     
+    // Calculate LTV-adjusted breakeven for this scenario
+    const ltvAdjustedBreakeven = getLTVAdjustedBreakevenROAS(cumulativeRepeats, 100);
+    const ltvRoasDiff = effectiveROAS - ltvAdjustedBreakeven;
+    
     return {
       adjustedRepeatRate,
       expectedRepeats,
       cumulativeRepeats,
       effectiveROAS,
       status,
-      roasDiff
+      roasDiff,
+      ltvAdjustedBreakeven,
+      ltvRoasDiff
     };
   };
 
@@ -102,7 +110,10 @@ export const TimeHorizonTable = ({
                   Effective ROAS at<br />Current Performance
                 </th>
                 <th className="border border-border p-3 text-center font-medium">
-                  Breakeven Status
+                  LTV-Adjusted<br />Breakeven ROAS
+                </th>
+                <th className="border border-border p-3 text-center font-medium">
+                  LTV-Aware Status
                 </th>
               </tr>
             </thead>
@@ -136,11 +147,14 @@ export const TimeHorizonTable = ({
                     <td className="border border-border p-3 text-center font-medium">
                       {metrics.effectiveROAS.toFixed(2)}
                     </td>
+                    <td className="border border-border p-3 text-center font-medium text-blue-600">
+                      {metrics.ltvAdjustedBreakeven.toFixed(2)}
+                    </td>
                     <td className="border border-border p-3 text-center">
                       <div className="flex items-center justify-center gap-2">
-                        {getStatusIcon(metrics.status)}
+                        {getStatusIcon(metrics.ltvRoasDiff > 0 ? "profitable" : "unprofitable")}
                         <span className="text-sm font-medium">
-                          {getStatusText(metrics.status, metrics.roasDiff)}
+                          {metrics.ltvRoasDiff > 0 ? "✅ Profitable" : `❌ ${metrics.ltvRoasDiff.toFixed(2)} ROAS`}
                         </span>
                       </div>
                     </td>
