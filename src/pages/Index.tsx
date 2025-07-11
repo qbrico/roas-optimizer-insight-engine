@@ -67,34 +67,8 @@ const Index = () => {
   };
   return <div className="min-h-screen bg-background">
       <div className="container mx-auto p-6 space-y-8">
-        {/* Branded Header */}
+        {/* Main Title */}
         <div className="text-center space-y-6">
-          {/* QBR Media Brand Card */}
-          <Card className="mx-auto max-w-4xl border-2" style={{ 
-            background: 'linear-gradient(135deg, hsl(var(--qbr-primary) / 0.1), hsl(var(--qbr-secondary) / 0.1))',
-            borderColor: 'hsl(var(--qbr-primary) / 0.3)',
-            boxShadow: 'var(--shadow-brand)'
-          }}>
-            <CardContent className="p-8">
-              <div className="flex flex-col items-center space-y-4">
-                <div className="flex items-center space-x-4">
-                  <img 
-                    src={qbrLogo} 
-                    alt="QBR Media" 
-                    className="h-12 w-auto"
-                  />
-                  <div className="text-2xl font-semibold" style={{ color: 'hsl(var(--qbr-primary))' }}>
-                    QBR Media
-                  </div>
-                </div>
-                <div className="text-sm font-medium" style={{ color: 'hsl(var(--qbr-secondary))' }}>
-                  Performance Marketing Agency
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Main Title with Instacart Branding */}
           <div className="space-y-3">
             <h1 className="text-5xl font-bold text-foreground flex items-center justify-center gap-3">
               <span>🥕</span>
@@ -102,7 +76,7 @@ const Index = () => {
               <span>🥕</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Master your Instacart advertising strategy with QBR Media's comprehensive ROAS analysis tool
+              Master your Instacart advertising strategy with comprehensive ROAS analysis
             </p>
             <div className="flex items-center justify-center space-x-2 text-sm font-medium" style={{ color: 'hsl(var(--instacart-orange))' }}>
               <TrendingUp className="h-4 w-4" />
@@ -180,10 +154,9 @@ const Index = () => {
               <Button 
                 asChild 
                 size="lg" 
-                className="text-lg px-8 py-6 font-semibold text-white"
+                className="text-lg px-8 py-6 font-semibold text-white border-0"
                 style={{ 
-                  background: 'linear-gradient(135deg, hsl(var(--qbr-primary)), hsl(var(--qbr-secondary)))',
-                  border: 'none'
+                  background: 'linear-gradient(135deg, hsl(var(--qbr-primary)), hsl(var(--qbr-secondary)))'
                 }}
               >
                 <a 
@@ -204,16 +177,6 @@ const Index = () => {
           </CardContent>
         </Card>
 
-        {/* Footer Attribution */}
-        <div className="text-center py-8 border-t border-border">
-          <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
-            <span>Powered by</span>
-            <img src={qbrLogo} alt="QBR Media" className="h-6 w-auto" />
-            <span className="font-semibold" style={{ color: 'hsl(var(--qbr-primary))' }}>QBR Media</span>
-            <span>•</span>
-            <span>Performance Marketing Agency</span>
-          </div>
-        </div>
       </div>
     </div>;
 };
