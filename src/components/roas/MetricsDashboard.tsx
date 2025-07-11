@@ -38,7 +38,7 @@ export const MetricsDashboard = ({ parameters, breakevenROAS }: MetricsDashboard
             Net Gross Margin
           </div>
           <div className="text-xs text-green-600 mt-1">
-            (After Trade Spend)
+            (gross margin as % of SRP)
           </div>
         </CardContent>
       </Card>
