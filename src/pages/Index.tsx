@@ -75,10 +75,10 @@ const Index = () => {
               <span>Instacart Breakeven ROAS Calculator</span>
               <span>🥕</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Master your Instacart advertising strategy with comprehensive ROAS analysis
-            </p>
-            <div className="flex items-center justify-center space-x-2 text-sm font-medium" style={{ color: 'hsl(var(--instacart-orange))' }}>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Instacart ROAS breakeven analysis by QBR Media</p>
+            <div className="flex items-center justify-center space-x-2 text-sm font-medium" style={{
+            color: 'hsl(var(--instacart-orange))'
+          }}>
               <TrendingUp className="h-4 w-4" />
               <span>Optimize • Analyze • Scale</span>
             </div>
@@ -119,60 +119,62 @@ const Index = () => {
         <ScenarioComparison currentParameters={parameters} breakevenROAS={breakevenROAS} getEffectiveROAS={getEffectiveROAS} getROASStatus={getROASStatus} />
 
         {/* Call-to-Action Section */}
-        <Card className="mx-auto max-w-4xl border-2" style={{ 
-          background: 'linear-gradient(135deg, hsl(var(--instacart-green) / 0.1), hsl(var(--instacart-green) / 0.2))',
-          borderColor: 'hsl(var(--instacart-green) / 0.3)',
-          boxShadow: '0 10px 30px -10px hsl(var(--instacart-green) / 0.3)'
-        }}>
+        <Card className="mx-auto max-w-4xl border-2" style={{
+        background: 'linear-gradient(135deg, hsl(var(--instacart-green) / 0.1), hsl(var(--instacart-green) / 0.2))',
+        borderColor: 'hsl(var(--instacart-green) / 0.3)',
+        boxShadow: '0 10px 30px -10px hsl(var(--instacart-green) / 0.3)'
+      }}>
           <CardContent className="p-12 text-center">
             <div className="space-y-6">
               <div className="space-y-3">
-                <h2 className="text-3xl font-bold" style={{ color: 'hsl(var(--foreground))' }}>
+                <h2 className="text-3xl font-bold" style={{
+                color: 'hsl(var(--foreground))'
+              }}>
                   Ready to Optimize Your Instacart ROAS Strategy?
                 </h2>
-                <p className="text-lg max-w-2xl mx-auto" style={{ color: 'hsl(var(--foreground) / 0.8)' }}>
+                <p className="text-lg max-w-2xl mx-auto" style={{
+                color: 'hsl(var(--foreground) / 0.8)'
+              }}>
                   Get personalized insights and strategies from our Instacart advertising experts at QBR Media. 
                   Let's unlock your full potential on retail media networks.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <div className="flex items-center space-x-2 text-sm font-medium" style={{ color: 'hsl(var(--foreground))' }}>
+                <div className="flex items-center space-x-2 text-sm font-medium" style={{
+                color: 'hsl(var(--foreground))'
+              }}>
                   <span>🚀</span>
                   <span>Free Strategy Session</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm font-medium" style={{ color: 'hsl(var(--foreground))' }}>
+                <div className="flex items-center space-x-2 text-sm font-medium" style={{
+                color: 'hsl(var(--foreground))'
+              }}>
                   <span>📈</span>
                   <span>Custom ROAS Optimization</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm font-medium" style={{ color: 'hsl(var(--foreground))' }}>
+                <div className="flex items-center space-x-2 text-sm font-medium" style={{
+                color: 'hsl(var(--foreground))'
+              }}>
                   <span>🎯</span>
                   <span>Performance Marketing Expertise</span>
                 </div>
               </div>
 
-              <Button 
-                asChild 
-                size="lg" 
-                className="text-lg px-8 py-6 font-semibold border-2"
-                style={{ 
-                  background: 'hsl(var(--instacart-green))',
-                  color: 'hsl(var(--foreground))',
-                  borderColor: 'hsl(var(--foreground))'
-                }}
-              >
-                <a 
-                  href="https://surveyn12.typeform.com/to/vVD85yJw" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-2"
-                >
+              <Button asChild size="lg" className="text-lg px-8 py-6 font-semibold border-2" style={{
+              background: 'hsl(var(--instacart-green))',
+              color: 'hsl(var(--foreground))',
+              borderColor: 'hsl(var(--foreground))'
+            }}>
+                <a href="https://surveyn12.typeform.com/to/vVD85yJw" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                   <span>📞</span>
                   <span>Schedule Your Free Consultation</span>
                 </a>
               </Button>
 
-              <p className="text-sm" style={{ color: 'hsl(var(--foreground) / 0.7)' }}>
+              <p className="text-sm" style={{
+              color: 'hsl(var(--foreground) / 0.7)'
+            }}>
                 Join 100+ brands already scaling with QBR Media
               </p>
             </div>
