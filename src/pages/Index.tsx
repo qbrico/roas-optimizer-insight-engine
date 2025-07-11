@@ -66,9 +66,7 @@ const Index = () => {
         {/* Header */}
         <div className="text-center space-y-2">
           <h1 className="text-4xl font-bold text-foreground">Instacart Breakeven ROAS Calculator</h1>
-          <p className="text-lg text-muted-foreground">
-            E-commerce Advertising Optimization Dashboard
-          </p>
+          <p className="text-lg text-muted-foreground">Understand what is your breakeven ROAS on Instacart and other RMN</p>
         </div>
 
         {/* Key Metrics Dashboard */}
