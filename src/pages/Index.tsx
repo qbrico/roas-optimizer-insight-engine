@@ -65,7 +65,7 @@ const Index = () => {
       <div className="container mx-auto p-6 space-y-8">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-4xl font-bold text-foreground">Instacart Breakeven ROAS calculator</h1>
+          <h1 className="text-4xl font-bold text-foreground">Instacart Breakeven ROAS Calculator</h1>
           <p className="text-lg text-muted-foreground">
             E-commerce Advertising Optimization Dashboard
           </p>
