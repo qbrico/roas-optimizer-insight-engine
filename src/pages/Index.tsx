@@ -8,7 +8,6 @@ import { BreakevenChart } from "@/components/roas/BreakevenChart";
 import { ScenarioComparison } from "@/components/roas/ScenarioComparison";
 import { CLVCalculator } from "@/components/roas/CLVCalculator";
 import { WhatIfAnalysis } from "@/components/roas/WhatIfAnalysis";
-import { ExportPanel } from "@/components/roas/ExportPanel";
 
 export interface ROASParameters {
   netGrossMargin: number;
@@ -128,7 +127,7 @@ const Index = () => {
         />
 
         {/* Analysis Tools Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* What-If Analysis */}
           <WhatIfAnalysis
             parameters={parameters}
@@ -140,12 +139,6 @@ const Index = () => {
           <CLVCalculator
             parameters={parameters}
             timeAdjustment={timeAdjustment}
-          />
-
-          {/* Export Panel */}
-          <ExportPanel
-            parameters={parameters}
-            breakevenROAS={breakevenROAS}
           />
         </div>
 
