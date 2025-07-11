@@ -89,32 +89,28 @@ const Index = () => {
           onParametersChange={setParameters}
         />
 
-        {/* Main Analysis Grid */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+        {/* Main Analysis Tables */}
+        <div className="space-y-8">
           {/* ROAS Sensitivity Table */}
-          <div className="space-y-4">
-            <ROASSensitivityTable
-              parameters={parameters}
-              breakevenROAS={breakevenROAS}
-              getEffectiveROAS={getEffectiveROAS}
-              getROASStatus={getROASStatus}
-              getLTVAdjustedBreakevenROAS={getLTVAdjustedBreakevenROAS}
-              getLTVAwareROASStatus={getLTVAwareROASStatus}
-              selectedScenario={selectedScenario}
-              onScenarioSelect={setSelectedScenario}
-            />
-          </div>
+          <ROASSensitivityTable
+            parameters={parameters}
+            breakevenROAS={breakevenROAS}
+            getEffectiveROAS={getEffectiveROAS}
+            getROASStatus={getROASStatus}
+            getLTVAdjustedBreakevenROAS={getLTVAdjustedBreakevenROAS}
+            getLTVAwareROASStatus={getLTVAwareROASStatus}
+            selectedScenario={selectedScenario}
+            onScenarioSelect={setSelectedScenario}
+          />
 
           {/* Time Horizon Analysis */}
-          <div className="space-y-4">
-            <TimeHorizonTable
-              parameters={parameters}
-              breakevenROAS={breakevenROAS}
-              timeAdjustment={timeAdjustment}
-              getROASStatus={getROASStatus}
-              getLTVAdjustedBreakevenROAS={getLTVAdjustedBreakevenROAS}
-            />
-          </div>
+          <TimeHorizonTable
+            parameters={parameters}
+            breakevenROAS={breakevenROAS}
+            timeAdjustment={timeAdjustment}
+            getROASStatus={getROASStatus}
+            getLTVAdjustedBreakevenROAS={getLTVAdjustedBreakevenROAS}
+          />
         </div>
 
         {/* Breakeven ROAS Evolution Analysis */}
